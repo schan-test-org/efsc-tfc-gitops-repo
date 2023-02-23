@@ -8,7 +8,7 @@ resource "aws_efs_file_system" "efs_st" {
 
   tags = merge (
      local.common_tags,
-     tomap({ "Name" = var.file_system_list.data.name })
+     tomap({ "Name" = var.file_system_list.efs_st.name })
    )
 }
 
