@@ -21,13 +21,14 @@ resource "aws_efs_file_system" "efs_st" {
 # create mount targets - data
 resource "aws_efs_mount_target" "efs_st" {
   count = var.create_efs_file_system ? length(var.subnet_ids) : 0
-  file_system_id  = aws_efs_file_system.efs_st.id
+  file_system_id  = aws_efs_file_system.efs_st[count.index].id
+  # file_system_id  = aws_efs_file_system.efs_st.id
   subnet_id       = var.subnet_ids[count.index]
   security_groups = [aws_security_group.efs.id]
 }
 
 output "file_system__data" {
-  value = length(aws_efs_file_system.efs_st.id) > 0 ? "${var.file_system_list.efs_st.name}: ${aws_efs_file_system.efs_st.id}" : null
+  value = length(aws_efs_file_system.efs_st[count.index].id) > 0 ? "${var.file_system_list.efs_st.name}: ${aws_efs_file_system.efs_st[count.index].id}" : null
   # value = "${var.file_system_list.efs_st.name}: ${aws_efs_file_system.efs_st.id}"
 }
 
