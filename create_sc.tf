@@ -10,7 +10,8 @@ resource "kubernetes_storage_class" "efs-sc" {
   parameters = {
     basePath = "/dynamic_provisioning"
     directoryPerms = "777"
-    fileSystemId = "fs-0243f88b27131fcef"
+    # fileSystemId = "fs-0243f88b27131fcef"
+    fileSystemId = aws_efs_file_system.efs_st.id
     provisioningMode = "efs-ap"
   }
 }
