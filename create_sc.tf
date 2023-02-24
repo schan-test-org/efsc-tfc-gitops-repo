@@ -7,6 +7,12 @@ resource "kubernetes_storage_class" "efs-sc" {
     name = var.storage_class_name
   }
   storage_provisioner = "efs.csi.aws.com"
+  parameters = {
+    basePath = "/dynamic_provisioning"
+    directoryPerms = "777"
+    fileSystemId = "fs-0243f88b27131fcef"
+    provisioningMode = "efs-ap"
+  }
 }
 
 output "efssc" {
