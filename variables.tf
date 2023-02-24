@@ -39,4 +39,8 @@ variable "tolerations" { default = "" }
 variable "node_selector" { default = "" }
 variable "topology_spread_constraints" { default = "" }
 
-############################# others : 2nd var #######################################
+############################# efs&sc : var #######################################
+variable "create_efs_file_system" { default     = false }
+variable "create_storage_class" { default     = false }
+
+variable "storage_class_name" { default     = "" }

@@ -24,8 +24,11 @@ vpc_cidr     = "10.30.0.0/16"
 subnet_ids   = ["subnet-0dea2a38484eed006", "subnet-0515d47ea98e7952e"]
 
 ########################################
-# efs
+# efs & sc
 ########################################
+create_efs_file_system = true
+create_storage_class = true
+
 file_system_list = {
   efs_st = {
     name = "test-deveks-efs"
@@ -35,6 +38,8 @@ file_system_list = {
   # }
 
 }
+
+storage_class_name = "aws-efs-prmt"
 
 ########################################
 # helm
