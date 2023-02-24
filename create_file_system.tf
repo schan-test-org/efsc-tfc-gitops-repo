@@ -28,8 +28,7 @@ resource "aws_efs_mount_target" "efs_st" {
 }
 
 output "file_system__data" {
-  value = length(aws_efs_file_system.efs_st[count.index].id) > 0 ? "${var.file_system_list.efs_st.name}: ${aws_efs_file_system.efs_st[count.index].id}" : null
-  # value = "${var.file_system_list.efs_st.name}: ${aws_efs_file_system.efs_st.id}"
+  value = var.create_efs_file_system ? "${var.file_system_list.efs_st.name}" : null
 }
 
 
