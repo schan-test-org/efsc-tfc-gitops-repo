@@ -1,5 +1,5 @@
 locals {
-  efs_sg_name = format("%s-efs-mount-sg", var.project)	
+  efs_sg_name = format("%s-efs-mount-sg", var.eks_cluster_name)	
   # efs_sg_name = format("%s-%s-efs-mount-sg", var.project, var.env)	
 }
 
