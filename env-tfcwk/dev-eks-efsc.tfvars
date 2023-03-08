@@ -13,7 +13,7 @@ default_tags = {
 # workspace setting
 ########################################
 tfc_org = "schan-test"
-tfc_wk = "dev-eks-tfc"
+tfc_wk = "1-dev-eks-tfc"
 
 ########################################
 # etc setting
