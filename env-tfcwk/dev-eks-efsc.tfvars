@@ -18,7 +18,7 @@ tfc_wk = "dev-eks-tfc"
 ########################################
 # etc setting
 ########################################
-eks_cluster_name       = "test-deveks"
+eks_cluster_name       = "deveks-test"
 vpc_id       = "vpc-0e8acf616f7d0dd34"
 vpc_cidr     = "10.30.0.0/16"
 subnet_ids   = ["subnet-0dea2a38484eed006", "subnet-0515d47ea98e7952e"]
